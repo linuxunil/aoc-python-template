@@ -10,23 +10,8 @@ _.file = ".env"
 _.python.venv = { path = ".venv", create = true }
 
 [tasks.test]
-usage = 'arg "<day>" help="Day to test (0 = all)" default=0'
-description = "Run tests for solution(s)"
-run = '''
-if [ ${usage_day} -eq 0 ]; then
-  uv run pytest solutions/ -v
-else
-  DAY=$(printf "%02d" ${usage_day})
-  uv run pytest solutions/day${DAY}.py -v
-fi
-'''
+run = "mise-tasks/test.sh"
 
 [tasks.solve]
-usage = 'arg "<day>" help="Day to run" default=0'
-description = "Run solution for a specific day"
-run = '''
-DAY=${usage_day:-$(date +%d)}
-((DAY > 25)) && DAY=25
-uv run python solutions/day$(printf "%02d" $DAY).py
-'''
+run = "mise-tasks/solve.sh"
 

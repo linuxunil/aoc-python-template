@@ -26,3 +26,5 @@ inputs/*.txt
 # Mise
 .mise.toml.local
 .mise.local.toml
+.claude/
+advent_of_code.egg-info/
