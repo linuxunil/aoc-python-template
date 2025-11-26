@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "mise test ${input:day}",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "solve",
+      "type": "shell",
+      "command": "mise solve ${input:day}",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "day",
+      "type": "promptString",
+      "description": "Day to run (1-25)",
+      "default": "1"
+    }
+  ]
+}
